@@ -1,0 +1,4 @@
+exportPattern("^[^\\.]")
+import(SparseM)
+#export(errorCts,errorSteps,gt1m.accfile,gt1m.acclist,gt3x.accfile,
+#gt3x.acclist,infoDate,print.acclist,readAccDir)
