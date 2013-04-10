@@ -9,10 +9,10 @@ This function collapses Actigraph GT1M accelerometer files into a dataframe with
 }
 \usage{
 collapse.accfile(object, palist = list(value = c(0, 100, 1000, 5000, 13000),
-rescale.epoch = 60, labels = NULL, BI = NULL), mwlist = list(value = 20,
+rescale.epoch = 60, labels = NULL, extreme = NULL), mwlist = list(value = 20,
 nz = 0), collapse.by = "\%Y-\%m-\%d", collapse.epoch = 60, aggregate.by =
 NULL, FUN.list = list(mean = function(x) mean(x, na.rm = TRUE)),
-keep.implausible = FALSE, keep.error = FALSE, ...)
+keep.extreme = FALSE, keep.error = FALSE, ...)
 }
 
 \arguments{
@@ -38,8 +38,8 @@ pre-collapsing aggregation level for accelerometer values. See argument \code{fo
   \item{FUN.list}{
 a named list of functions. See \code{\link{collapse.fun}}.
 }
-  \item{keep.implausible}{
-logical flag. If \code{FALSE} (default) behaviourally implausible values will be replaced by NAs. See \code{\link{MarkPA.accfile}}.
+  \item{keep.extreme}{
+logical flag. If \code{FALSE} (default) extreme values will be replaced by NAs. See \code{\link{MarkPA.accfile}}.
 }
   \item{keep.error}{
 logical flag. If \code{FALSE} (default) data errors as identified by \code{\link{errorCts}} will be replaced by NAs.
@@ -58,6 +58,10 @@ A data frame containing the following variables
 \item{collapse.by}{aggregation factor}
 \item{fileid}{file identifier}
 \item{...}{named columns according to arguments \code{FUN} and \code{labels} of \code{palist}}
+}
+
+\references{
+Geraci M, Rich C, Sera F, Cortina-Borja M, Griffiths LJ, and Dezateux C (2012). Technical report on accelerometry data processing in the Millennium Cohort Study. London, UK: University College London. Available at \url{http://discovery.ucl.ac.uk/1361699}
 }
 
 \author{

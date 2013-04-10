@@ -58,8 +58,9 @@ An object of class \code{accfile} is a list containing the following components:
 
 \references{
 Actigraph (Pensacola, Florida).
-}
 
+Geraci M, Rich C, Sera F, Cortina-Borja M, Griffiths LJ, and Dezateux C (2012). Technical report on accelerometry data processing in the Millennium Cohort Study. London, UK: University College London. Available at \url{http://discovery.ucl.ac.uk/1361699}
+}
 
 \author{
 Marco Geraci

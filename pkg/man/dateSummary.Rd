@@ -51,6 +51,9 @@ After wear time (in minutes) is calculated for each day/hour, the theshold \code
 \item{IsTruncated}{dummy variable to define truncated date (1 = yes)}
 }
 
+\references{
+Geraci M, Rich C, Sera F, Cortina-Borja M, Griffiths LJ, and Dezateux C (2012). Technical report on accelerometry data processing in the Millennium Cohort Study. London, UK: University College London. Available at \url{http://discovery.ucl.ac.uk/1361699}
+}
 
 \author{
 Marco Geraci
