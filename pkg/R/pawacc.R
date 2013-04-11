@@ -821,7 +821,7 @@ bouts <- xtabs(~bouts$lengths+bouts$values) # frequency table bouts by duration 
 duration <- as.numeric(rownames(bouts)) # duration of bouts
 duration_factor <- cut(duration, breaks = bts, labels = bouts.labels, include.lowest = TRUE, right = FALSE)
 
-res <- array(NA, dim = c(length(bts) - 1, vl, 3, nucf), dimnames = list(levels(duration_factor), uz, c("tot_duration","frequency","mean_duration"), ucf))
+res <- array(0, dim = c(length(bts) - 1, vl, 3, nucf), dimnames = list(levels(duration_factor), 1:vl, c("tot_duration","frequency","mean_duration"), ucf))
 
 for(i in 1:nucf){
 	x.sub <- x[collapse.factor == ucf[i]]
@@ -908,7 +908,7 @@ for(i in 1:n){
 	duration <- as.numeric(rownames(bouts)) # duration of bouts
 	duration_factor <- cut(duration, breaks = bts, labels = bouts.labels, include.lowest = TRUE, right = FALSE)
 
-	res <- array(NA, dim = c(length(bts) - 1, vl, 3, nucf), dimnames = list(levels(duration_factor), 1:vl, c("tot_duration","frequency","mean_duration"), ucf))
+	res <- array(0, dim = c(length(bts) - 1, vl, 3, nucf), dimnames = list(levels(duration_factor), 1:vl, c("tot_duration","frequency","mean_duration"), ucf))
 
 	for(j in 1:nucf){
 		x.sub <- x[collapse.factor == ucf[j]]
