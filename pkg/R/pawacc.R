@@ -833,8 +833,16 @@ for(i in 1:nucf){
 	duration <- as.numeric(rownames(bouts)) # duration of bouts
 	duration_factor <- cut(duration, breaks = bts, labels = bouts.labels, include.lowest = TRUE, right = FALSE)
 	duration_bouts <- sweep(bouts, 1, duration, "*") # time spent in bouts
-	group_bouts_dur <- apply(duration_bouts, 2, function(x,y) tapply(x, list(y), sum), y = duration_factor)
-	group_bouts_freq <- apply(bouts, 2, function(x,y) tapply(x, list(y), sum), y = duration_factor)
+	group_bouts_dur <- apply(duration_bouts, 2, function(x,y) tapply(x, list(y), sum, na.rm = TRUE), y = duration_factor)
+	if(sum(is.na(group_bouts_dur)) > 0){
+		group_bouts_dur[is.na(group_bouts_dur)] <- 0
+		warning("Some cells are empty. Bouts duration set to 0")
+	}
+	group_bouts_freq <- apply(bouts, 2, function(x,y) tapply(x, list(y), sum, na.rm = TRUE), y = duration_factor)
+	if(sum(is.na(group_bouts_freq)) > 0){
+		group_bouts_freq[is.na(group_bouts_freq)] <- 0
+		warning("Some cells are empty. Bouts frequence set to 0")
+	}
 	group_bouts_meandur <- group_bouts_dur/group_bouts_freq
 
 	res[,match(colnames(group_bouts_dur), uz),1,i] <- group_bouts_dur
@@ -912,8 +920,16 @@ for(i in 1:n){
 		duration <- as.numeric(rownames(bouts)) # duration of bouts
 		duration_factor <- cut(duration, breaks = bts, labels = bouts.labels, include.lowest = TRUE, right = FALSE)
 		duration_bouts <- sweep(bouts, 1, duration, "*") # time spent in bouts
-		group_bouts_dur <- apply(duration_bouts, 2, function(x,y) tapply(x, list(y), sum), y = duration_factor)
-		group_bouts_freq <- apply(bouts, 2, function(x,y) tapply(x, list(y), sum), y = duration_factor)
+		group_bouts_dur <- apply(duration_bouts, 2, function(x,y) tapply(x, list(y), sum, na.rm = TRUE), y = duration_factor)
+		if(sum(is.na(group_bouts_dur)) > 0){
+			group_bouts_dur[is.na(group_bouts_dur)] <- 0
+			warning("Some cells are empty. Bouts duration set to 0")
+		}
+		group_bouts_freq <- apply(bouts, 2, function(x,y) tapply(x, list(y), sum, na.rm = TRUE), y = duration_factor)
+		if(sum(is.na(group_bouts_freq)) > 0){
+			group_bouts_freq[is.na(group_bouts_freq)] <- 0
+			warning("Some cells are empty. Bouts frequence set to 0")
+		}
 		group_bouts_meandur <- group_bouts_dur/group_bouts_freq
 
 	res[,match(colnames(group_bouts_dur), uz),1,j] <- group_bouts_dur
