@@ -2,7 +2,7 @@
 \alias{errorCts}
 \alias{errorSteps}
 
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Perform error checking
 }

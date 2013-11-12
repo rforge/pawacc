@@ -20,7 +20,7 @@ an object of class \code{accfile}.
   }
 
   \item{x}{
-either an integer giving the epoch number or the timestamp in a \code{POSIX} format(e.g., '%Y-%m-%d %H:%M:%S').
+either an integer giving the epoch number or the timestamp in a \code{POSIX} format (e.g., '\%Y-\%m-\%d \%H:\%M:\%S').
 }
 }
 
@@ -36,6 +36,16 @@ Marco Geraci
 
 \seealso{
 \code{\link{gt1m.accfile}}
+}
+
+\examples{
+data(gt1m_sample)
+
+tsFromEpoch(gt1m_sample, 10000)
+# [1] "2011-12-10 01:39:45 GMT"
+
+epochFromTS(gt1m_sample, as.POSIXlt(strptime('2011-12-10 01:39:45', '\%Y-\%m-\%d \%H:\%M:\%S')))
+# [1] 10000
 }
 
 \keyword{ timestamp }

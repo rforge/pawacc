@@ -1,6 +1,6 @@
-\name{MarkPA.acclist}
-\alias{MarkPA.acclist}
-\alias{MarkPA.accfile}
+\name{markpa.acclist}
+\alias{markpa.acclist}
+\alias{markpa.accfile}
 
 \title{
 Classify mode of physical activity
@@ -9,9 +9,9 @@ Classify mode of physical activity
 This function identifies modes of physical activity using user-defined breakpoints for accelerometer counts.
 }
 \usage{
-MarkPA.acclist(object, value, rescale.epoch = 60, labels = NULL,
+markpa.acclist(object, value, rescale.epoch = 60, labels = NULL,
 extreme = NULL, keep.error = FALSE)
-MarkPA.accfile(object, value, rescale.epoch = 60, labels = NULL,
+markpa.accfile(object, value, rescale.epoch = 60, labels = NULL,
 extreme = NULL, keep.error = FALSE)
 }
 
@@ -23,7 +23,7 @@ an object of class \code{acclist} or \code{accfile}.
 vector of breaks to define physical activity modes. The lowest breakpoint must be 0.
 }
   \item{rescale.epoch}{
-epoch expressed in the same unit as acceleromenter's epoch to determine multiplier to rescale \code{value} (default is 60). See details.
+epoch expressed in the same unit as acceleromenter epoch to determine multiplier to rescale \code{value} (default is 60). See details.
 }
   \item{labels}{
 labels for physical activity modes.
@@ -39,7 +39,7 @@ logical flag. If \code{FALSE} (default) data errors as identified by \code{\link
 }
 
 \details{
-Breakpoints are specified as counts per seconds using \code{value}. If the epoch used for \code{value} is different from the accelerometer's epoch, a rescaling is applied. E.g., if epoch is 15 seconds and breakpoints are expressed as counts per 60 seconds, \code{value} is divided by 60/15 = 4. There can be \emph{n} physical activity modes at maximum, where \emph{n} is the length of \code{value}. 
+Breakpoints are specified as counts per seconds using \code{value}. If the epoch used for \code{value} is different from the accelerometer epoch, a rescaling is applied. E.g., if epoch is 15 seconds and breakpoints are expressed as counts per 60 seconds, \code{value} is divided by 60/15 = 4. There can be \emph{n} physical activity modes at maximum, where \emph{n} is the length of \code{value}. 
 
 The argument \code{extreme} is \code{NULL} by default. Use either `last' to select the last category or the category number 1 to \emph{n}.
 

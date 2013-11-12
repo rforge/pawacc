@@ -1,6 +1,6 @@
-\name{MarkWear.acclist}
-\alias{MarkWear.acclist}
-\alias{MarkWear.accfile}
+\name{markwear.acclist}
+\alias{markwear.acclist}
+\alias{markwear.accfile}
 
 \title{
 Classify wear and non-wear time
@@ -9,8 +9,8 @@ Classify wear and non-wear time
 This functions identifies sequences of zeroes of a given length to classify wear and non-wear time in accelerometer data files.
 }
 \usage{
-MarkWear.acclist(object, value, nz = 0, keep.error = FALSE)
-MarkWear.accfile(object, value, nz = 0, keep.error = FALSE)
+markwear.acclist(object, value, nz = 0, keep.error = FALSE)
+markwear.accfile(object, value, nz = 0, keep.error = FALSE)
 }
 
 \arguments{
@@ -30,7 +30,7 @@ logical flag. If \code{FALSE} (default) data errors as identified by \code{\link
 
 }
 \details{
-Currently, this function is implemented for class \code{gt1m} only.
+Currently, this function is implemented for class \code{gt1m} only. The accelerometer epoch is assumed to be expressed in seconds. Therefore \code{value} is automatically rescaled to \code{value * 60/object$info$epoch}.
 }
 
 \value{
@@ -47,6 +47,39 @@ Marco Geraci
 
 \seealso{
 \code{\link{readAccDir}}
+}
+
+\examples{
+
+data(gt1m_sample)
+
+# 20-minute threshold
+wear <- markwear.accfile(gt1m_sample, value = 20)
+\dontrun{
+> table(wear)
+ wear
+ Non-wear     Wear 
+    27572    17338 
+}
+
+# lower threshold
+wear <- markwear.accfile(gt1m_sample, value = 5)
+\dontrun{
+> table(wear)
+ wear
+ Non-wear     Wear 
+    30188    14722 
+}
+
+# allow for some non-zero values within a 20-minute window
+wear <- markwear.accfile(gt1m_sample, value = 20, nz = 2)
+\dontrun{
+> table(wear)
+ wear
+ Non-wear     Wear 
+   28198    16712 
+}
+
 }
 
 \keyword{wear time}

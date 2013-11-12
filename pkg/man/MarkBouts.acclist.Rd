@@ -1,6 +1,6 @@
-\name{MarkBouts.acclist}
-\alias{MarkBouts.acclist}
-\alias{MarkBouts.accfile}
+\name{markbouts.acclist}
+\alias{markbouts.acclist}
+\alias{markbouts.accfile}
 
 \title{
 Classify accumulation of physical activity in bouts
@@ -9,10 +9,11 @@ Classify accumulation of physical activity in bouts
 This function identifies bouts of physical activity using user-defined breakpoints for accelerometer counts.
 }
 \usage{
-MarkBouts.acclist(object, value, bts = c(0, 10, 20, Inf), rescale.epoch = 60,
+markbouts.acclist(object, value, bts = c(0, 10, 20, Inf), rescale.epoch = 60,
 collapse.by = "\%Y-\%m-\%d", value.labels = NULL, bouts.labels = NULL,
 extreme = NULL, keep.error = FALSE)
-MarkBouts.accfile(object, value, bts = c(0, 10, 20, Inf), rescale.epoch = 60,
+
+markbouts.accfile(object, value, bts = c(0, 10, 20, Inf), rescale.epoch = 60,
 collapse.by = "\%Y-\%m-\%d", value.labels = NULL, bouts.labels = NULL,
 extreme = NULL, keep.error = FALSE)
 }
@@ -54,7 +55,7 @@ The argument \code{extreme} is \code{NULL} by default. Use either `last' to sele
 Currently, this function is implemented for class \code{gt1m} only.
 }
 \value{
-The function \code{MarkBouts.accfile} returns duration, frequency and mean duration of bouts by bout category, physical activity mode and \code{T} levels of \code{collapse.by} (e.g., day) in array of dimension \code{c(length(bts) - 1,length(value) + 1,3,T)}. \code{MarkBouts.acclist} is applied to objects of class \code{acclist}, in which case a list of arrays of the same length as the number of accelerometer files in \code{object} is returned.
+The function \code{markbouts.accfile} returns duration, frequency and mean duration of bouts by bout category, physical activity mode and \code{T} levels of \code{collapse.by} (e.g., day) in array of dimension \code{c(length(bts) - 1,length(value) + 1,3,T)}. \code{markbouts.acclist} is applied to objects of class \code{acclist}, in which case a list of arrays of the same length as the number of accelerometer files in \code{object} is returned.
 }
 
 \author{

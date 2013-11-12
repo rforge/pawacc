@@ -8,7 +8,8 @@ Version 1.0 (September 5, 2012)
 
 =============================================
 
-Version 1.01 (April 10, 2013)
+Version 1.1 (November 13, 2013)
 
+- Package pawacc on CRAN
 - Fixed bug in function dateSummary
-- Added functions: plot.gt1m, MarkBouts.accfile, MarkBouts.acclist
+- Added functions: plot.gt1m, markbouts.accfile, markbouts.acclist

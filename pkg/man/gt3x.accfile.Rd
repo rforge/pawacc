@@ -35,7 +35,7 @@ logical flag: should data be stored in sparse format?
 }
 
 \details{
-Raw accelerometer data are processed according to the device data format. 
+Raw accelerometer data are processed according to the device data format. See file 'gt3x_sample.dat' in directory '\\inst\\extdata' of this package.
 }
 
 \value{
@@ -59,6 +59,12 @@ Marco Geraci
 \code{\link{readAccDir}}
 }
 
+\examples{
+
+data(gt3x_sample)
+class(gt3x_sample)
+
+}
 
 \keyword{ accelerometer }
 \keyword{ Actigraph GT3X }

@@ -12,7 +12,7 @@ This function plots data from an Actigraph GT1M accelerometer file.
 
 \usage{
 \method{plot}{gt1m}(x, y = NULL, xlab, ylab, main,
-keep.error = TRUE, which = "Counts", select = 1,...)
+keep.error = TRUE, which = "counts", select = 1,...)
 }
 
 \arguments{
@@ -26,7 +26,7 @@ ignored.
 x-axis label. If missing, 'Timestamp'.
 }
   \item{ylab}{
-y-axis label. If missing, 'Counts' or 'Steps'.
+y-axis label. If missing, 'counts' or 'steps'.
 }
   \item{main}{
 main title. If missing, 'fileid' from \code{x$info}.
@@ -35,7 +35,7 @@ main title. If missing, 'fileid' from \code{x$info}.
 logical flag. If \code{FALSE} (default) data errors as identified by \code{\link{errorCts}} will be replaced by NAs.
 }
   \item{which}{
-either 'Counts' or 'Steps'
+either 'counts' or 'steps'.
 }
   \item{select}{
 numeric. If \code{class(x)} is \code{acclist}, this argument specifies the corresponding position of the accelerometer file in the \code{list} (first file by default).
@@ -62,6 +62,13 @@ Marco Geraci
 \code{\link{plot}}, \code{\link{par}}, \code{\link{gt1m.accfile}}, \code{\link{gt1m.acclist}}
 }
 
+\examples{
+data(gt1m_sample)
+
+plot(gt1m_sample, which = "counts")
+plot(gt1m_sample, which = "steps")
+
+}
 
 \keyword{ accelerometer }
 \keyword{ Actigraph GT1M }

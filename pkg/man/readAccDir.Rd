@@ -10,7 +10,8 @@ This function reads raw files downloaded from accelerometers and stores them in 
 \usage{
 readAccDir(path, model, ext = "dat", counts.pos = 1,
 	tz = "Europe/London", sparse = FALSE,
-	fault = 32767, save = TRUE, ...)
+	fault = 32767, save = TRUE, compress = "gzip",
+	compression_level = 6,...)
 }
 
 \arguments{
@@ -37,6 +38,12 @@ numerical value that indicates voltage signal saturation (temporarily used for b
 }
   \item{save}{
 either logical or character. If logical, \code{save = TRUE} stores accelerometer files as \code{.Rdata} objects in a new directory ('accRfiles') in \code{path}. If the directory already exists, confirmation for overwriting will be prompted. \code{save = FALSE} stores accelerometer files in current R session. Alternatively, an existing folder can be specified.
+}
+  \item{compress}{
+logical or character string specifying whether saving to a named file is to use compression if \code{save = TRUE}. See argument \code{compress} in \code{\link{save}}.
+}
+  \item{compression_level}{
+integer: the level of compression to be used. See argument \code{compression_level} in \code{\link{save}}.
 }
   \item{\dots}{
 not used.

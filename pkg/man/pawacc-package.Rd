@@ -12,9 +12,9 @@ This package provides processing and summary functions.
 \tabular{ll}{
 Package: \tab pawacc\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2012-09-04\cr
-License: \tab GPL (>= 3)\cr
+Version: \tab 1.1\cr
+Date: \tab 2013-11-13\cr
+License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }
 }

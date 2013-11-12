@@ -8,7 +8,7 @@ Handling Errors
 This function handles errors
 }
 \usage{
-handleError(x, err, code = "all", replace = NULL, na.rm = TRUE, keep.error = FALSE)
+handleError(x, err, code = "all", replace = NULL, na = TRUE, keep.error = FALSE)
 }
 
 \arguments{
@@ -22,9 +22,9 @@ a vector of error codes of the same length as \code{x}.
 if \code{code = "all"} (default), any code different from zero will be flagged.
 }
   \item{replace}{
-value with which flagged errors are to be replaced. This argument is mandatory is \code{na.rm = FALSE}.
+value with which flagged errors are to be replaced. This argument is mandatory if \code{na = FALSE}.
 }
-  \item{na.rm}{
+  \item{na}{
 if \code{TRUE} (default) flagged errors are replaced with NA's.
 }
   \item{keep.error}{

@@ -1,5 +1,5 @@
-\name{aggr.accfile}
-\alias{aggr.accfile}
+\name{agg.accfile}
+\alias{agg.accfile}
 
 \title{
 Aggregate Accelerometry Data
@@ -9,7 +9,7 @@ This function aggregates count values
 }
 
 \usage{
-aggr.accfile(object, by, x = NULL, y = NULL,
+agg.accfile(object, by, x = NULL, y = NULL,
 	keep.error = FALSE)
 }
 
@@ -18,13 +18,14 @@ aggr.accfile(object, by, x = NULL, y = NULL,
 an object of class \code{accfile}.
   }
   \item{by}{
-epoch.
+epoch by which count and steps are aggregated. Note: it cannot be less that the accelerometer epoch (\code{object$info$epoch
+}).
 }
   \item{x}{
-counts.
+optional argument. If \code{NULL}, this is set to counts (\code{object$counts}).
 }
   \item{y}{
-steps.
+optional argument. If \code{NULL}, this is set to counts (\code{object$steps}).
 }
   \item{keep.error}{
 logical flag. Should errors be omitted?
@@ -34,9 +35,9 @@ logical flag. Should errors be omitted?
 
 
 \value{
-\item{Counts }{aggregated counts}
-\item{Steps }{aggregated steps}
-\item{TimeStamp_agg }{time stamping}
+\item{counts }{aggregated counts}
+\item{steps }{aggregated steps}
+\item{ts_agg }{time stamping}
 }
 
 \references{
@@ -49,6 +50,18 @@ Marco Geraci
 
 \seealso{
 \code{\link{collapse.accfile}}
+}
+
+\examples{
+
+data(gt1m_sample)
+
+# aggregate by 30-second epochs
+agg.accfile(gt1m_sample, by = 30)
+
+# aggregate by 5-minute epochs
+agg.accfile(gt1m_sample, by = 300, keep.error = FALSE)
+
 }
 
 \keyword{ collapse }
