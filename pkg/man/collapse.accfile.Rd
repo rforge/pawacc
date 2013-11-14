@@ -32,7 +32,7 @@ dataset aggregation level. See argument \code{format} from \code{\link{strptime}
 epoch by which time spent in different physical activity modes is summarized. See details.
 }
   \item{aggregate.by}{
-pre-collapsing aggregation level for accelerometer values. See argument \code{format} from \code{\link{strptime}} for options and details below.
+pre-collapsing aggregation level for accelerometer values. See argument \code{format} from \code{\link{strptime}} for options.
 }
 
   \item{FUN.list}{
@@ -49,9 +49,7 @@ arguments for \code{\link{dateSummary}}.
 }
 }
 
-\details{
-More
-}
+
 
 \value{
 A data frame containing the following variables
