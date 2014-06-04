@@ -18,8 +18,7 @@ aggAccFile(object, by, which = "counts",
 an object of class \code{accfile}.
   }
   \item{by}{
-epoch by which count and steps are aggregated. Note: it cannot be less that the accelerometer epoch (\code{object$info$epoch
-}).
+epoch by which count and steps are aggregated. Note: it cannot be less that the accelerometer epoch (\code{object$info$epoch}).
 }
   \item{which}{
 either 'counts' or 'steps' for \code{gt1m} files or one of \code{c('x','y','z','steps')} for \code{gt3x} files.
@@ -35,8 +34,7 @@ logical flag. Should errors be omitted?
 
 
 \value{
-\item{counts }{aggregated counts}
-\item{steps }{aggregated steps}
+\item{outcome}{aggregated values}
 \item{ts_agg }{time stamping}
 }
 
