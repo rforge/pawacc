@@ -42,7 +42,7 @@ numerical value that indicates voltage signal saturation.
 }
 
 \details{
-Raw accelerometer data are processed according to the device data format. Several data checks are performed by \code{\link{errorChk}},  \code{\link{errorChk}}, and \code{\link{infoDate}}. An additional check is performed on the lenght of the sequence of measurements when both accelerometer counts and steps are recorded. If the length is odd, a warning message is produced. See file 'gt1m_sample.dat' in directory '\\inst\\extdata' of this package.
+Raw accelerometer data are processed according to the device data format. Several data checks are performed by \code{\link{errorChk}} and \code{\link{infoDate}}. An additional check is performed on the lenght of the sequence of measurements when both accelerometer counts and steps are recorded. If the length is odd, a warning message is produced. See file 'gt1m_sample.dat' in directory '\\inst\\extdata' of this package.
 }
 
 \value{
